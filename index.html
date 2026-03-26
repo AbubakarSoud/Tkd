@@ -69,62 +69,7 @@
       </div>
 
       <!-- Subscribe -->
-      <div class="subscribe-title">Subscribe for Updates</div>
-
-      <div class="hero-subscribe-form">
-        <div class="sib-form">
-          <div id="sib-form-container" class="sib-form-container">
-            <div id="success-message" class="sib-form-message-panel" aria-live="polite">
-              ✅ You're on the list!
-            </div>
-
-            <div id="error-message" class="sib-form-message-panel" aria-live="polite">
-              ❌ Something went wrong. Try again.
-            </div>
-
-            <form
-              id="sib-form"
-              class="brevo-clean-form"
-              method="POST"
-              action="https://3794e137.sibforms.com/serve/MUIFAGiV6T81F0VgzH0-K7nty3mO_VaoCEvKidVKJXzhoKrKhgZKcnjYj_VzBUJryI65l7dPINKUb38ovzfgGe1EYMhpFWGqXiCM0LO4zPOjGlBJ5t5SA-5SLJIPy_I8C_qXNNXsk9BMWcs-RIbfwhtk6Q4TskY78xg3LFJN5sZrUVCdEUk-ee1l_cJCCuK_8YwprrBqLOFLDoJt6Q=="
-              data-type="subscription"
-              novalidate
-            >
-              <div class="subscribe-bar">
-                <input
-                  class="form-control hero-email-input input"
-                  type="email"
-                  id="EMAIL"
-                  name="EMAIL"
-                  autocomplete="email"
-                  placeholder="Enter your email"
-                  required
-                />
-
-                <button
-                  class="btn hero-notify-btn sib-form-block__button sib-form-block__button-with-loader"
-                  form="sib-form"
-                  type="submit"
-                >
-                  <span class="btn-label">Notify Me</span>
-                  <!-- <span class="btn-loading">Submitting...</span> -->
-                </button>
-              </div>
-
-              <div class="sib-captcha">
-                <div
-                  class="g-recaptcha sib-visible-recaptcha"
-                  id="sib-captcha"
-                  data-sitekey="6LcEBZksAAAAAPqhefstt70y4w-ojBR3m4vadsfx"
-                ></div>
-              </div>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden">
-              <input type="hidden" name="locale" value="en">
-            </form>
-          </div>
-        </div>
-      </div>
+      
 
       <!-- Social -->
       <div class="social-icons-bottom">
@@ -181,50 +126,6 @@
     })();
   </script>
 
-  <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
-  <script>
-    (function () {
-      const form = document.getElementById("sib-form");
-      const successMessage = document.getElementById("success-message");
-      const errorMessage = document.getElementById("error-message");
-      const submitButton = form ? form.querySelector('button[type="submit"]') : null;
-
-      if (!form || !submitButton) return;
-
-      function showMessage(type, text) {
-        successMessage.style.display = "none";
-        errorMessage.style.display = "none";
-
-        if (type === "success") {
-          successMessage.textContent = text || "✅ You're on the list!";
-          successMessage.style.display = "block";
-        } else {
-          errorMessage.textContent = text || "❌ Something went wrong. Try again.";
-          errorMessage.style.display = "block";
-        }
-      }
-
-      
-
-          const responseText = await response.text();
-
-          if (response.ok && !/could not be saved|error/i.test(responseText)) {
-            showMessage("success", "✅ You're on the list!");
-            form.reset();
-            if (typeof grecaptcha !== "undefined") {
-              grecaptcha.reset();
-            }
-          } else {
-            showMessage("error", "❌ Something went wrong. Try again.");
-          }
-        } catch (error) {
-          showMessage("error", "❌ Something went wrong. Try again.");
-        } finally {
-          submitButton.disabled = false;
-          form.classList.remove("is-submitting");
-        }
-      });
-    })();
-  </script>
+ 
 </body>
 </html>
