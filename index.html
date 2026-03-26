@@ -204,37 +204,7 @@
         }
       }
 
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        successMessage.style.display = "none";
-        errorMessage.style.display = "none";
-
-        const emailInput = document.getElementById("EMAIL");
-        const email = emailInput ? emailInput.value.trim() : "";
-
-        if (!email) {
-          showMessage("error", "❌ Enter your email address.");
-          return;
-        }
-
-        if (typeof grecaptcha !== "undefined") {
-          const captchaResponse = grecaptcha.getResponse();
-          if (!captchaResponse) {
-            showMessage("error", "❌ Please complete the reCAPTCHA.");
-            return;
-          }
-        }
-
-        submitButton.disabled = true;
-        form.classList.add("is-submitting");
-
-        try {
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            mode: "cors"
-          });
+      
 
           const responseText = await response.text();
 
