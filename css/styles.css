@@ -1,0 +1,527 @@
+/* =========================================
+   TANZANIA TAEKWONDO - IMAGE MATCH VERSION
+   PASTE AT THE VERY END OF styles.css
+========================================= */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "DM Sans", sans-serif;
+  background-color: #bfc7d2;
+}
+
+/* Background video */
+.bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  transform: translate(-50%, -50%) scale(1.02);
+  filter: blur(4px) brightness(1.02) saturate(0.75);
+  z-index: 0;
+}
+
+/* Frosted page wash */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20, 28, 40, 0.42),
+      rgba(32, 42, 58, 0.30)
+    ),
+    rgba(10, 16, 24, 0.28);
+  pointer-events: none;
+}
+
+.taekwondo-hero {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem 1rem 7.5rem;
+}
+
+.hero-center {
+  width: 100%;
+  max-width: 980px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+
+/* Logo block */
+.hero-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Logo */
+.hero-logo {
+  width: 82px;
+}
+
+/* Text block */
+.hero-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* TANZANIA TAEKWONDO */
+.brand-line-1 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* FEDERATION */
+.brand-line-2 {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+/* Titles */
+.hero-kicker {
+  margin: 0 0 0.55rem;
+  font-size: clamp(2.05rem, 3.8vw, 3.05rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.38);
+}
+
+.hero-main-title {
+  margin: 0 0 0.7rem;
+  font-size: clamp(2.9rem, 6.3vw, 5.35rem);
+  font-weight: 800;
+  line-height: 1.03;
+  color: #ffffff;
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.42),
+    0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+.hero-subtitle {
+  margin: 0 0 1.9rem;
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.34);
+}
+
+/* Countdown panel */
+.countdown-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 860px;
+  margin: 0 auto 2.3rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.countdown-item {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.countdown-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 1px;
+  height: calc(100% - 36px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.count-value {
+  display: block;
+  font-size: clamp(3.6rem, 5vw, 4.9rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  text-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.34),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+.count-label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: clamp(1.1rem, 1.9vw, 1.55rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+}
+
+/* Subscribe */
+.subscribe-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.34);
+}
+
+.hero-subscribe-form {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+.subscribe-bar {
+  display: flex;
+  align-items: stretch;
+  max-width: 660px;
+  margin: 0 auto;
+  height: 72px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-email-input {
+  flex: 1 1 auto;
+  height: 72px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  font-size: 1.02rem !important;
+  padding: 0 1.45rem !important;
+  box-shadow: none !important;
+}
+
+.hero-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.hero-email-input:focus {
+  background: rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+}
+
+.hero-notify-btn {
+  min-width: 220px;
+  border: none !important;
+  border-radius: 0 !important;
+  background: linear-gradient(135deg, #1f6fda 0%, #145fc8 100%) !important;
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0 1.8rem;
+  box-shadow: none !important;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hero-notify-btn:hover,
+.hero-notify-btn:focus {
+  background: linear-gradient(135deg, #2878e8 0%, #1a69d7 100%) !important;
+  color: #ffffff !important;
+}
+
+.invalid-feedback {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Social icons */
+.social-icons-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: -4.8rem;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #7c8798;
+  font-size: 1.55rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.social-circle:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  color: #55657d;
+}
+
+/* Success/error messages */
+#submitSuccessMessage .fw-bold,
+#submitSuccessMessage div {
+  color: #ffffff !important;
+}
+
+#submitErrorMessage .text-danger {
+  color: #ffd7d7 !important;
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+  .hero-logo {
+    width: 92px;
+  }
+
+  .brand-line-1 {
+    font-size: 0.88rem;
+  }
+
+  .brand-line-2 {
+    font-size: 0.8rem;
+  }
+
+  .countdown-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 520px;
+  }
+
+  .countdown-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .social-icons-bottom {
+    bottom: -5.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .taekwondo-hero {
+    padding: 1.5rem 0.8rem 7rem;
+  }
+
+  .hero-logo-wrap {
+    gap: 0.65rem;
+  }
+
+  .hero-kicker {
+    font-size: 1.75rem;
+  }
+
+  .hero-main-title {
+    font-size: 2.45rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .countdown-item {
+    min-height: 120px;
+  }
+
+  .count-value {
+    font-size: 2.8rem;
+  }
+
+  .count-label {
+    font-size: 1rem;
+  }
+
+  .subscribe-bar {
+    height: 62px;
+  }
+
+  .hero-email-input {
+    height: 62px !important;
+    padding: 0 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .hero-notify-btn {
+    min-width: 150px;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .social-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+.hero-center {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-center::before {
+  content: "";
+  position: absolute;
+  inset: 6% 12% 10% 12%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(20, 28, 40, 0.32) 0%,
+    rgba(20, 28, 40, 0.18) 45%,
+    rgba(20, 28, 40, 0.00) 75%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-center > * {
+  position: relative;
+  z-index: 1;
+}
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.9rem 1.4rem;
+  margin-bottom: 1.8rem;
+  border-radius: 999px;
+  background: rgba(18, 24, 34, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Bigger logo */
+.brand-pill .hero-logo {
+  width: 96px;   /* was ~72px */
+  height: auto;
+  display: block;
+}
+
+/* Text block */
+.brand-pill .hero-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Main name */
+.brand-pill .brand-line-1 {
+  font-size: 1.15rem;   /* increased */
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Federation */
+.brand-pill .brand-line-2 {
+  margin-top: 0.25rem;
+  font-size: 0.98rem;   /* increased */
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+.brand-pill {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+/* Default social icon look */
+.social-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #7c8798;
+  font-size: 1.55rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* General hover motion */
+.social-circle:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* Facebook */
+.social-circle[aria-label="Facebook"]:hover {
+  background: #1877f2;
+  color: #ffffff;
+}
+
+/* Twitter / X */
+.social-circle[aria-label="Twitter"]:hover {
+  background: #1da1f2;
+  color: #ffffff;
+}
+
+/* Instagram */
+.social-circle[aria-label="Instagram"]:hover {
+  background: linear-gradient(
+    135deg,
+    #f58529 0%,
+    #dd2a7b 45%,
+    #8134af 75%,
+    #515bd4 100%
+  );
+  color: #ffffff;
+}
+
+/* YouTube */
+.social-circle[aria-label="YouTube"]:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+/* TikTok */
+.social-circle[aria-label="TikTok"]:hover {
+  background: #000000;
+  color: #ffffff;
+}
+#message {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  text-align: center;
+  font-weight: 500;
+}
