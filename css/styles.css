@@ -617,3 +617,63 @@ body::before {
 .entry__error {
   display: none !important;
 }
+
+
+/* Brevo subscribe fix */
+.sib-form,
+.sib-form-container,
+.brevo-clean-form {
+  background: transparent !important;
+}
+
+.brevo-clean-form {
+  margin: 0;
+}
+
+.sib-form-message-panel {
+  display: none;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#success-message {
+  color: #dfffe9 !important;
+}
+
+#error-message {
+  color: #ffd6d6 !important;
+}
+
+.sib-captcha {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entry__error,
+.input--hidden {
+  display: none !important;
+}
+
+.hero-notify-btn .btn-loading {
+  display: none;
+}
+
+.is-submitting .hero-notify-btn .btn-label {
+  display: none;
+}
+
+.is-submitting .hero-notify-btn .btn-loading {
+  display: inline;
+}
+
+.is-submitting .hero-notify-btn {
+  opacity: 0.85;
+  pointer-events: none;
+}
