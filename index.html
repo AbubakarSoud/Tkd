@@ -72,41 +72,53 @@
       <div class="subscribe-title">Subscribe for Updates</div>
 
 <div class="hero-subscribe-form">
-  <form id="sib-form" method="POST" action="https://3794e137.sibforms.com/serve/MUIFAGiV6T81F0VgzH0-K7nty3mO_VaoCEvKidVKJXzhoKrKhgZKcnjYj_VzBUJryI65l7dPINKUb38ovzfgGe1EYMhpFWGqXiCM0LO4zPOjGlBJ5t5SA-5SLJIPy_I8C_qXNNXsk9BMWcs-RIbfwhtk6Q4TskY78xg3LFJN5sZrUVCdEUk-ee1l_cJCCuK_8YwprrBqLOFLDoJt6Q==" data-type="subscription">
+  <div class="sib-form">
+    <div id="sib-form-container" class="sib-form-container">
+      <form id="sib-form" method="POST" action="https://3794e137.sibforms.com/serve/MUIFAGiV6T81F0VgzH0-K7nty3mO_VaoCEvKidVKJXzhoKrKhgZKcnjYj_VzBUJryI65l7dPINKUb38ovzfgGe1EYMhpFWGqXiCM0LO4zPOjGlBJ5t5SA-5SLJIPy_I8C_qXNNXsk9BMWcs-RIbfwhtk6Q4TskY78xg3LFJN5sZrUVCdEUk-ee1l_cJCCuK_8YwprrBqLOFLDoJt6Q==" data-type="subscription">
 
-    <div class="subscribe-bar">
-      <input
-        type="email"
-        id="EMAIL"
-        name="EMAIL"
-        placeholder="Enter your email"
-        autocomplete="off"
-        required
-        class="hero-email-input"
-      />
+        <div class="subscribe-bar">
+          <input
+            class="form-control hero-email-input input"
+            type="email"
+            id="EMAIL"
+            name="EMAIL"
+            autocomplete="off"
+            placeholder="Enter your email"
+            required
+          />
 
-      <button type="submit" class="hero-notify-btn sib-form-block__button sib-form-block__button-with-loader">
-        Notify Me
-      </button>
+          <button
+            class="btn hero-notify-btn sib-form-block__button sib-form-block__button-with-loader"
+            form="sib-form"
+            type="submit"
+          >
+            Notify Me
+          </button>
+        </div>
+
+        <div id="success-message" class="sib-form-message-panel">
+          ✅ You're on the list!
+        </div>
+
+        <div id="error-message" class="sib-form-message-panel">
+          ❌ Something went wrong. Try again.
+        </div>
+
+        <div class="sib-captcha">
+          <div
+            class="g-recaptcha sib-visible-recaptcha"
+            id="sib-captcha"
+            data-sitekey="6LcEBZksAAAAAPqhefstt70y4w-ojBR3m4vadsfx"
+            data-callback="handleCaptchaResponse"
+          ></div>
+        </div>
+
+        <input type="text" name="email_address_check" value="" class="input--hidden">
+        <input type="hidden" name="locale" value="en">
+      </form>
     </div>
-
-    <div id="success-message" class="sib-form-message-panel">
-      ✅ You're on the list!
-    </div>
-
-    <div id="error-message" class="sib-form-message-panel">
-      ❌ Something went wrong. Try again.
-    </div>
-
-    <div class="sib-captcha">
-      <div class="g-recaptcha" data-sitekey="6LcEBZksAAAAAPqhefstt70y4w-ojBR3m4vadsfx"></div>
-    </div>
-
-    <input type="text" name="email_address_check" value="" class="input--hidden">
-    <input type="hidden" name="locale" value="en">
-  </form>
+  </div>
 </div>
-       
 
       <!-- Social -->
       <div class="social-icons-bottom">
@@ -161,9 +173,18 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
     })();
-  </script>
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+    
+  <script>
+  function handleCaptchaResponse() {
+    var event = new Event('captchaChange');
+    var captcha = document.getElementById('sib-captcha');
+    if (captcha) {
+      captcha.dispatchEvent(event);
+    }
+  }
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
   
 </body>
 </html>
