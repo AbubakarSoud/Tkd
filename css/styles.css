@@ -525,3 +525,23 @@ body::before {
   text-align: center;
   font-weight: 500;
 }
+.sib-form-message-panel {
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+#success-message {
+  color: #00ffcc;
+}
+
+#error-message {
+  color: #ff4d4d;
+}
+
+.sib-captcha {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
