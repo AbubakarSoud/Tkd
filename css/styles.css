@@ -545,3 +545,36 @@ body::before {
   display: flex;
   justify-content: center;
 }
+.input--hidden {
+  display: none !important;
+}
+
+.sib-form-message-panel {
+  display: none;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#success-message {
+  color: #dfffe9;
+}
+
+#error-message {
+  color: #ffd6d6;
+}
+
+.sib-captcha {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-recaptcha {
+  transform-origin: center top;
+}
